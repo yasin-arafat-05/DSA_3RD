@@ -22,7 +22,27 @@ class LinkedList:
             ptr = ptr.next
         node = Node(data,ptr.next)
         self.head = node
-    
+    #___________________ Insert Elemeent At any index _____________
+    def insertAtAnyPos(self,index,data):
+        if index<0 or index> self.length():
+            raise Exception(f"Invalid index: {index}")
+        cnt = 0
+        ptr = self.head
+        while ptr:
+            cnt+=1
+            ptr = ptr.next
+            if(cnt==(index-1)):
+                break
+        node = Node(data,self.head)
+        ptr.next = node 
+    #_____________________________Length of the Linked List _________________________
+    def length(self) -> int:
+        cnt = 0
+        ptr = self.head
+        while ptr:
+            cnt +=1
+            ptr = ptr.next
+        return cnt 
     #__________________________ Print All The Element ___________________________
     def traverseAllElement(self):
         ptr = self.head
@@ -44,3 +64,4 @@ if __name__ == '__main__':
     ll.insertAtHead(8)
     ll.insertAtHead(9)
     ll.traverseAllElement()
+    print(f"lenth of the linked list: {ll.length()}")
