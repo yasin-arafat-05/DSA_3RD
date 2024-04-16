@@ -17,3 +17,7 @@
 
 <br> <br>
 
+### যদি গ্রাফের edge বা weight এর ভ্যালু দেওয়া থাকলে (like: neural network) তাহলে ম্যাট্রিক্স এ সেই ভ্যালু করে দিব । 
+
+![Alt text](image-13.png)
+
