@@ -37,3 +37,16 @@
 
 ---
 
+# Height of tree : 
+
+![Alt text](image-9.png)
+
+---
+
+# LCA (Lowest Common Ancestor)
+
+`LCA -> Common Parent.`
+
+![Alt text](image-10.png)
+
+---
