@@ -42,7 +42,10 @@
 
 আমাদের এইখানে, <br>
 - `আমরা যখন root node (১) থেকে child node (২) গিয়েছি অর্থাৎ একটা operation complete হবে ।`
+
 -` তারপর child node গুলোতে আরেকটা operation complete হবে । ` 
+
 -` তারপর child node গুলো থেকে exit হওয়ার সময় আরেকটা operation complete হবে । ` 
+
 
 
