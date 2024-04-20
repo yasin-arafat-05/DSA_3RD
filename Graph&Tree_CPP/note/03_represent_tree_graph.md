@@ -203,5 +203,6 @@ int m,n;cin>>n>>m;
 - `Adjency matrix দিয়ে এ যেকোন দুইটা edge connected আছে কি না তা  0(1) complexity দেখতে পারবো ।`
 - `Adjency list দিয়ে এ যেকোন দুইটা edge connected আছে কি না তা  0(n) complexity দেখতে পারবো ।`
 
+` Same for find the weight of the graph . `
 
 
