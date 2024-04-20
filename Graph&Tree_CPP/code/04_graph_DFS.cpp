@@ -9,14 +9,23 @@ const int N = 1e5;
 vector<int> graph[N];
 
 // visited graph
-int vis[N];
+bool vis[N];
 
 
 
 void dfs(int vertex){
     //___Take action on vertex after entering the vertex___
+    /*
+     While we are visiting a vertex check it is visited or not:
+    */
+    cout<<vertex<<endl;
+    vis[vertex] = true;
 
   for(int child : graph[vertex]){
+
+    cout<<"par: "<<vertex<<" " <<"child: "<<child<<endl;
+
+    if(vis[child]) continue;
     //_____Take action on child before(calling dfs) entering the child node ________
 
     dfs(child);
@@ -37,6 +46,8 @@ int main(){
         graph[v1].push_back(v2);
         graph[v2].push_back(v1);
     }
+
+    dfs(1);
 
 }
 

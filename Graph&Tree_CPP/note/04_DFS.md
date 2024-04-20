@@ -55,5 +55,16 @@
 `উপরের এই ৪টা operation complete করতে হবে আমাদের কোডেঃ `
 
 
+---
+
+# Time Complexity:
+
+`Recursive Function এর ক্ষেত্রে ঐ  Recursive  Function কত বার call হচ্ছে এবং ঐ  Recursive  Function এ কত গুলো computation হচ্ছে । অর্থাৎ, এখানে, Recursive  Function মোট আমাদের vertex এর সমান call হবে আর  Recursive  Function এর মধ্যে for লুপ আমাদের যত গুলো edges আছে তত বার  for লুপ চলবে । `
+<br>
+
+complexity: O(V+E)
+
+<br>
+
 
 
