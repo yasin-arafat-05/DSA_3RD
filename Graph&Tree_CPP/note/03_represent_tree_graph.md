@@ -133,3 +133,75 @@ Input:
 
 ---
 
+
+# এখন, আমরা একটা গ্রাফ কে adjacency matrix আকারে কীভাবে ইনপুট নিব যদি weight দেওয়া থাকে । 
+
+
+`আগের মতোই কিন্তু শুধু ১ এর পরির্বতে weight টা দিয়ে দিব । `
+
+
+```cpp
+/*
+input:
+6 9
+1 3 4
+1 5 3
+3 5 2
+3 4 7
+3 6 8
+3 2 9
+2 6 1
+4 6 2
+5 6 3
+*/
+
+int m,n;cin>>n>>m;
+
+    //_________Input of the graph____________
+    for(int i=0;i<m;i++){
+        int v1,v2,wt;cin>>v1>>v2>>wt;
+        graph[v1][v2] = wt;
+        graph[v2][v1] = wt;
+    }
+
+```
+
+# এখন, আমরা একটা গ্রাফ কে adjacency list আকারে কীভাবে ইনপুট নিব যদি weight দেওয়া থাকে । 
+
+```cpp
+/*
+input:
+6 9
+1 3 4
+1 5 3
+3 5 2
+3 4 7
+3 6 8
+3 2 9
+2 6 1
+4 6 2
+5 6 3
+*/
+
+int m,n;cin>>n>>m;
+
+    //_________Input of the graph____________
+    for(int i=0;i<m;i++){
+        int v1,v2,wt;cin>>v1>>v2>>wt;
+        graph[v1][v2] = wt;
+        graph[v2][v1] = wt;
+    }
+
+```
+
+---
+
+# সুবিধা ও অসুবিধাঃ 
+
+![Alt text](image-16.png)
+
+- `Adjency matrix দিয়ে এ যেকোন দুইটা edge connected আছে কি না তা  0(1) complexity দেখতে পারবো ।`
+- `Adjency list দিয়ে এ যেকোন দুইটা edge connected আছে কি না তা  0(n) complexity দেখতে পারবো ।`
+
+
+
