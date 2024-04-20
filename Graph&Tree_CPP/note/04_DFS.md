@@ -31,3 +31,18 @@
 
 - for visulize visit this page: [page_link](https://visualgo.net/en)
 
+
+---
+
+# code:
+
+### আমরা উপরের গ্রাফটা (যেইটা দিয়ে DFS in `Graph` ব্যাসিক দেখেছিলাম) সেইটা দিয়ে DFS implement করবো । 
+
+![Alt text](image-19.png)
+
+আমাদের এইখানে, <br>
+- `আমরা যখন root node (১) থেকে child node (২) গিয়েছি অর্থাৎ একটা operation complete হবে ।`
+-` তারপর child node গুলোতে আরেকটা operation complete হবে । ` 
+-` তারপর child node গুলো থেকে exit হওয়ার সময় আরেকটা operation complete হবে । ` 
+
+
