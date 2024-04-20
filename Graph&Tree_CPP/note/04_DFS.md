@@ -41,11 +41,19 @@
 ![Alt text](image-19.png)
 
 আমাদের এইখানে, <br>
-- `আমরা যখন root node (১) থেকে child node (২) গিয়েছি অর্থাৎ একটা operation complete হবে ।`
+
+- `আমরা যখন root node (1) থেকে child node (1) গিয়েছি অর্থাৎ একটা operation complete হবে ।`
 
 - `তারপর child node গুলোতে আরেকটা operation complete হবে । ` 
 
 - `তারপর child node গুলো থেকে exit হওয়ার সময় আরেকটা operation complete হবে । ` 
+
+- `তারপর child node(2) থেকে exit হওয়ার সময় আরেকটা operation complete হবে । ` 
+
+![Alt text](image-20.png)
+
+`উপরের এই ৪টা operation complete করতে হবে আমাদের কোডেঃ `
+
 
 
 

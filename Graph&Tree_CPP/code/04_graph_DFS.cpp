@@ -11,11 +11,14 @@ vector<int> graph[N];
 // visited graph
 int vis[N];
 
+
+
 void dfs(int vertex){
     //___Take action on vertex after entering the vertex___
 
   for(int child : graph[vertex]){
     //_____Take action on child before(calling dfs) entering the child node ________
+
     dfs(child);
     //_____Take action on child after(calling dfs) existing the child node ________
 
