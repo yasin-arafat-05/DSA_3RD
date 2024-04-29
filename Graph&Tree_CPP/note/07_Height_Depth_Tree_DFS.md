@@ -97,4 +97,6 @@ input for a tree:
     }
 ```
 
-`অর্থাৎ, আমরা যখন, vertex থেকে নিচের দিকে যাবো তখন আমরা আগের depth এর সাথে ১ যোগ করে দিব ।  depth[child] = depth[vertex] + 1; । আর height এর ক্ষেত্রে, উপরের ছবিতে ৮ এর height আমরা ১২ এর height থেকে পাবো । আবার, ৫ এর height আমরা ৬,৭,৮ থেকে পাবো । আমরা করতে পারি যে, ১২ এর height তো শূন্য আর ৮ এর height, বের করার সময় আমরা ৮ এর child এর সাথে আমরা ১ যোগ করবো  অর্থাৎ, **depth[child] = depth[vertex] + 1;** ।  `
+`অর্থাৎ, আমরা যখন, vertex থেকে নিচের দিকে যাবো তখন আমরা আগের depth এর সাথে ১ যোগ করে দিব ।  depth[child] = depth[vertex] + 1; । আর height এর ক্ষেত্রে, উপরের ছবিতে ৮ এর height আমরা ১২ এর height থেকে পাবো । আবার, ৫ এর height আমরা ৬,৭,৮ থেকে পাবো । আমরা করতে পারি যে, ১২ এর height তো শূন্য আর ৮ এর height, বের করার সময় আমরা ৮ এর child এর সাথে আমরা ১ যোগ করবো  অর্থাৎ, **depth[child] = depth[vertex] + 1;**  আর ৫ এর ক্ষেত্রে ৬,৭,৮ এদের maximum হবে ৫ এর height । অর্থাৎ, **depth[child] = max(height[vertex],height[child]+1);** `
+
+
