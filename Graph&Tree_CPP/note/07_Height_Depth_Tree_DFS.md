@@ -8,6 +8,7 @@
 
 # DFS For Tree:
 
+`এই ক্ষেত্রে আমাদের visited array এর দরকার হয় না। কিন্তু, আমরা যেন parent এর loop না পড়ে যায় সেইজন্য আমরা parent pass করবো dfs funtion এর মধ্যে  `
 
 ```cpp
 #include<iostream>
@@ -15,7 +16,9 @@
 # define yasin {ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);}
 using namespace std;
 const int N = 1e5;
+int depth[N],height[N];
 vector<int> graph[N];
+
 
 void dfsTree(int vertex, int par=0){
     // 4 section fisrt 2 entering(vertex,node) last 2 existing(child,vertex)
@@ -65,4 +68,20 @@ input for a tree:
 
 ---
 
+
+
+# height and depth :
+
+
+---
+
+`আমরা জানি, `
+
+- `depth হচ্ছে root node থেকে কত নিচে আছি । `
+
+- `height হচ্ছে সর্বশেষ leaf node থেকে কত উপরে আছি । `
+
+![Alt text](image-24.png)
+
+`কোন Tree দেওয়া থাকলে default ভাবে আমরা, উপরের ছবির উপরে যেই নিয়ম দেওয়া আছে সেইটা maintain করে ছবির মতো দুইটা array তে depth  and height fill  করবো । `
 

@@ -3,19 +3,21 @@
 # define yasin {ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);}
 using namespace std;
 const int N = 1e5;
+int depth[N],height[N];
 vector<int> graph[N];
+
 
 void dfsTree(int vertex, int par=0){
     // 4 section fisrt 2 entering(vertex,node) last 2 existing(child,vertex)
 
     // section 1
-    cout<<"Parent: "<<par<<" "<<"vertex: "<<vertex<<endl;
-
     for(int child:graph[vertex]){
         //section 2
+        depth[child] = depth[vertex] + 1;
         if(child==par) continue;
         dfsTree(child,vertex);
         //section 3
+        height[vertex] = max(height[vertex],height[child]+1);
     }
 
     //section 4
@@ -29,22 +31,9 @@ int main(){
         graph[v2].push_back(v1);
     }
     dfsTree(1);
+
+    for(int i=0;i<n;i++){
+      cout<< "depth: " <<depth[i]<<" "<< "height: " <<height[i]<<endl;
+    }
+    
 }
-
-
-/*
-input for a tree:
-13
-1 2
-1 3
-1 13
-2 5
-3 4
-5 6
-5 7
-5 8
-8 12
-4 9
-4 10 
-10 11
-*/
