@@ -79,9 +79,11 @@ input for a tree:
 
 - `depth হচ্ছে root node থেকে কত নিচে আছি । `
 
-- `height হচ্ছে সর্বশেষ leaf node থেকে কত উপরে আছি । `
+- `height হচ্ছে সর্বশেষ leaf node থেকে সেই particular node টি কত উপরে আছে । `
 
 ![Alt text](image-24.png)
 
-`কোন Tree দেওয়া থাকলে default ভাবে আমরা, উপরের ছবির উপরে যেই নিয়ম দেওয়া আছে সেইটা maintain করে ছবির মতো দুইটা array তে depth  and height fill  করবো । `
+`কোন Tree দেওয়া থাকলে default ভাবে আমরা, উপরের ছবির উপরে যেই নিয়ম দেওয়া আছে সেইটা maintain করে ছবির মতো দুইটা array তে depth  and height fill  করবো । অর্থাৎ, ১ এর ক্ষেত্রে, depth হচ্ছে ০ কারণ এর উপরে আর কোন node নেই । আর ৬,৭,১২,৯,১১ এইদের ক্ষেত্রে  height হচ্ছে ০ কারণ, এদের নিচে আর কোন node নেই । `
+
+
 
