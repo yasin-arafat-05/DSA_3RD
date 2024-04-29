@@ -85,5 +85,16 @@ input for a tree:
 
 `কোন Tree দেওয়া থাকলে default ভাবে আমরা, উপরের ছবির উপরে যেই নিয়ম দেওয়া আছে সেইটা maintain করে ছবির মতো দুইটা array তে depth  and height fill  করবো । অর্থাৎ, ১ এর ক্ষেত্রে, depth হচ্ছে ০ কারণ এর উপরে আর কোন node নেই । আর ৬,৭,১২,৯,১১ এইদের ক্ষেত্রে  height হচ্ছে ০ কারণ, এদের নিচে আর কোন node নেই । `
 
+```cpp
+ // sectction1
+    for(int child:graph[vertex]){
+        //section 2
+        depth[child] = depth[vertex] + 1;
+        if(child==par) continue;
+        dfsTree(child,vertex);
+        //section 3
+        height[vertex] = max(height[vertex],height[child]+1);
+    }
+```
 
-
+`অর্থাৎ, আমরা যখন, vertex থেকে নিচের দিকে যাবো তখন আমরা আগের depth এর সাথে ১ যোগ করে দিব ।  depth[child] = depth[vertex] + 1; । আর height এর ক্ষেত্রে, উপরের ছবিতে ৮ এর height আমরা ১২ এর height থেকে পাবো । আবার, ৫ এর height আমরা ৬,৭,৮ থেকে পাবো । আমরা করতে পারি যে, ১২ এর height তো শূন্য আর ৮ এর height, বের করার সময় আমরা ৮ এর child এর সাথে আমরা ১ যোগ করবো  অর্থাৎ, **depth[child] = depth[vertex] + 1;** ।  `
