@@ -1,15 +1,18 @@
 #include<iostream>
 using namespace std;
 
-void func(int x){
-    if(x==5){
-        cout<<"x is equal to 5"<<endl;
-       return;
-    }
-
-    cout<<"next-> "<<endl;
-}
 int main(){
-    int x = 5;
-    func(x);
+    int *n;
+    int x = 'A';
+    n = &x;
+
+    cout<< *n << endl;
+
+    delete n;
+
+    cout << (n+1)<<endl;
+    cout << (n+2)<<endl;
+    cout << (n+3)<<endl;
+    cout << (n+4)<<endl;
+    cout << (n+5)<<endl;
 }
