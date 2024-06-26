@@ -54,7 +54,7 @@ class Linked_List{
             this->next = nullptr;
         }
     };
-
+    public:
     int capacity;
     HeaderNode *header;
     Node *tail;
@@ -116,8 +116,105 @@ class Linked_List{
     }
 
     // --------- insert element at any position ----------
-    
+    void insertAtAny(int index,int data){
 
+        if(header->length >= capacity){
+            cout<<"Overflow in the linked list (inserAtAny)"<<endl;
+        }
+
+        if(index<=0 || index > (header->length + 1)){
+            cout<<"Array index out of bound error (insertAtMiddle)" <<endl;
+        }
+
+        if(index==1){
+            insertAtHead(data);
+        }else if(index == (header->length+1) ){
+            insertAtTail(data);
+        }else{
+            Node *temp = header->next;
+            for(int i =1;i<(index-1);i++){
+                temp = temp->next;
+            }
+            Node *nodeToInsert = new Node(data);
+            Node *store = temp->next;
+            temp->next = nodeToInsert;
+            nodeToInsert->next = store;
+            header->length++;
+        }
+    }
+    
+    // --------- delete element head ----------
+    
+    void removeAtHead(){
+        if(header->next==nullptr){
+            cout<<"Uderflow in the linked list(removeAtHead)"<<endl;
+            return;
+        }
+        Node *temp = header->next->next;
+        if(temp==nullptr){
+            tail == nullptr;
+        }
+
+        Node *removeNode = header->next;
+        removeNode->next = nullptr;
+        header->next = temp;
+        header->length--;
+        delete removeNode;
+    }
+
+    // --------- delete element tail ----------
+    void removeAtTail(){
+        if(tail==nullptr){
+            cout<<"Uderflow in the linked list(removeAtTail)"<<endl;
+            return;
+        }
+        if(header->next->next != nullptr){
+            Node *temp = header->next;
+            while(temp->next != tail){
+                temp = temp->next;
+            }
+            Node *noteToDelete = temp->next;
+            temp->next = nullptr;
+            tail = temp;
+            header->length--;
+            delete noteToDelete;
+        }else{
+            Node *nodeTodelete = header->next;
+            tail=nullptr;
+            header->length--;
+            delete nodeTodelete;
+        }
+        
+    }
+    // --------- delete element tail ----------
+
+    void removeAtAny(int index){
+        if(tail==nullptr){
+            cout<<"Underflow in the linked list(deleteAtAny)"<<endl;
+        }
+        if(index<= 0 || index > header->length ){
+            cout<<"Index out of bound error."<<endl;
+        }
+        if(index==1){
+            removeAtHead();
+        }else if(index == (header->length)){
+            removeAtTail();
+        }else{
+            Node *temp = header->next;
+            for(int i=1;i<(index-1);i++){
+                temp = temp->next;
+            }
+            Node *storeNode = temp->next->next;
+            Node *nodeTodelete = temp->next;
+            nodeTodelete->next = nullptr;
+            temp->next = storeNode;
+            header->length--;
+            delete nodeTodelete;
+        }
+    }
+
+
+    
 };
 
 //___________________________________ Main Function ____________________________
@@ -126,8 +223,18 @@ int main(){
     Linked_List ll(5);
     ll.insertAtTail(7);
     ll.insertAtTail(8);
-    ll.getHeaderInfo();
+    ll.insertAtAny(2,12);
+    ll.insertAtAny(2,13);
     cout<<endl;
+
+    ll.removeAtHead();
+    ll.removeAtAny(3);
+    ll.removeAtAny(2);
+    ll.removeAtAny(1);
+
+    ll.getHeaderInfo();
     ll.traverseAllElement();
+    cout<<ll.tail->data<<endl;
+    
 }
 
