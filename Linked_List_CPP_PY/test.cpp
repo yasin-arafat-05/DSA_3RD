@@ -1,18 +1,14 @@
 #include<iostream>
 using namespace std;
+void updatefunc(int arr[]){
 
+arr[1] = -12;
+
+}
 int main(){
-    int *n;
-    int x = 'A';
-    n = &x;
-
-    cout<< *n << endl;
-
-    delete n;
-
-    cout << (n+1)<<endl;
-    cout << (n+2)<<endl;
-    cout << (n+3)<<endl;
-    cout << (n+4)<<endl;
-    cout << (n+5)<<endl;
+    int arr[5] = {1,2,3,4,5};
+    updatefunc(arr);
+    for(int i : arr){
+        cout<<i<<" ";
+    }
 }
