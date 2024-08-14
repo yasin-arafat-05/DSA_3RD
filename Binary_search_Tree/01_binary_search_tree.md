@@ -79,8 +79,6 @@ Let's find a value exists in our tree or not. We will iterate through our tree t
 
 
 
-<iframe src="" width="800px" height="2100px"></iframe>
-
-<embed src="path/to/yourfile.pdf" width="800px" height="2100px" />
+<embed src="encoder_decoder_research_paper.pdf" width="800px" height="2100px" />
 
 
