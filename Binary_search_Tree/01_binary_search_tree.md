@@ -77,8 +77,3 @@ Let's find a value exists in our tree or not. We will iterate through our tree t
 ![image-01](pic/pic-02.png)
 <br>
 
-
-
-<embed src="encoder_decoder_research_paper.pdf" width="800px" height="2100px" />
-
-
