@@ -44,6 +44,8 @@ A **Binary Search Tree (BST)** is a type of binary tree where each node has at m
 - `Pre-Order.`
 - `Post-Order.`
 
+`Note: Inorder of BST is **sorted**.`
+
 
 <br>
 
@@ -76,4 +78,17 @@ Let's find a value exists in our tree or not. We will iterate through our tree t
 
 ![image-01](pic/pic-02.png)
 <br>
+
+
+# 5) Find Minimum and Maximum value: 
+
+`Mimimum value: এর জন্য Left Side এ যেতে থাকবো যতক্ষন না পর্যন্ত Null পাচ্ছি  । `
+
+`Maximum value: এর জন্য Right Side এ যেতে থাকবো যতক্ষন না পর্যন্ত Null পাচ্ছি ।`
+
+<br>
+
+![image-01](pic/pic-04.png)
+<br>
+
 

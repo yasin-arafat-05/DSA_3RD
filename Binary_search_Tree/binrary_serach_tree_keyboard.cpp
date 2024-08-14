@@ -110,9 +110,76 @@ Node *insertNewIntoBST(Node *root, int data) {
     return root;
 }
 
+//____________________________ Find Minimum amd Maximum value _____________________
+
+Node *minVal(Node *root){
+    Node *temp = root;
+    while(temp->left!=NULL){
+        temp  = temp->left;
+    }
+    return temp;
+}
+
+Node *maxVal(Node *root){
+    Node *temp = root;
+    while(temp->right!=NULL){
+        temp  = temp->right;
+    }
+    return temp;
+}
+
+// Delete from BST:
+
+Node *deleteFromBST(Node *root, int val){
+
+    //base case 
+    if(root==NULL){
+        return root;
+    }
+
+    if(root->data==val){
+        // 0 child 
+        if(root->left==NULL && root->right==NULL){
+            delete root;
+            return NULL;
+        }
+        // 1 child
+            // left child 
+            if(root->left!=NULL && root->right==NULL){
+                Node  *temp = root->left;
+                delete root;
+                return temp;
+            }
+            // right child
+            if(root->right!=NULL && root->left==NULL){
+                Node *temp = root->right;
+                delete root;
+                return temp;
+            }
+        // 2 child
+        if(root->left!=NULL && root->right!=NULL){
+            int min = minVal(root->right)->data;
+            root->data = min;
+            // now delete the minimum value from the root->right
+            root->right = deleteFromBST(root->right,min);
+        }
+
+    }else if(root->data > val){
+        root->left = deleteFromBST(root->left,val);
+    }else{
+        root->right = deleteFromBST(root->right,val);
+    }
+
+    /* 
+    Rrecursion diye call return korar time e suru te jei root diye chilam akdom 
+    shes e sei root tai pabo . tai no tension just play with reursion.
+    */
+    return root;
+}
 
 //___________________________ Main Function _________________________
 // data: 10 8 21 7 27 5 4 3 -1
+// data(delete_Node): 100 50 25 70 60 110 120 115 -1
 
 int main(){
     yasin
@@ -135,8 +202,12 @@ int main(){
     }
 
     // insert element :
-    root = insertNewIntoBST(root,25);
-    
+   // root = insertNewIntoBST(root,25);
+    cout<<"minvalue: "<<minVal(root)->data<<" "<<endl;
+    cout<<"maxvalue: "<<maxVal(root)->data<<" "<<endl;
+
+    root = deleteFromBST(root,50);
+
     cout<<"level Order Traversal"<<endl;
     levelOrderTraversal(root);
     cout<<endl;
