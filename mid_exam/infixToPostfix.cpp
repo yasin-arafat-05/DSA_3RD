@@ -50,3 +50,4 @@ int main() {
     postfix(input);
     return 0;
 }
+

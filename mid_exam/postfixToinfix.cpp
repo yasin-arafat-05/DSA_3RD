@@ -12,9 +12,6 @@ void postfixToInfix(queue<string> input){
     while(!input.empty()){
     string token = input.front();
     input.pop();
-        if(st.size()<2){
-            cout<<"insufficient operator for the operation : "<<token<<endl;
-        }
         if(token=="+" || token=="-" || token=="*" || token=="/"){
             string operator2  = st.top();
             st.pop();

@@ -9,6 +9,7 @@ using namespace std;
 #define yasin {ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);}
 
 
+// ____________________ This method i learn from love babbar course ____________________________
 int partition(int arr[],int s,int e){
     // find the right  place of and elemnet(called poviet):
     int poviet = arr[s];
@@ -42,6 +43,36 @@ int partition(int arr[],int s,int e){
     return povietIndex;
 }
 
+//___________________________ This method inspried by our dsa book _________________________
+int partitionDsaBook(int *arr, int beg, int end) {
+    int left = beg, right = end;
+    int loc = beg;
+
+    while (true) {
+        // Move the right pointer towards the left until an element smaller than or equal to the pivot is found
+        while (arr[loc] <= arr[right] && loc != right) {
+            right--;
+        }
+        if (loc == right) return loc;
+        
+        if (arr[loc] > arr[right]) {
+            swap(arr[loc], arr[right]);
+            loc = right;
+        }
+
+        // Move the left pointer towards the right until an element greater than or equal to the pivot is found
+        while (arr[loc] >= arr[left] && loc != left) {
+            left++;
+        }
+        if (loc == left) return loc;
+        if (arr[loc] < arr[left]) {
+            swap(arr[loc], arr[left]);
+            loc = left;
+        }
+    }
+}
+
+
 
 void quicksort(int arr[],int s,int e){
 
@@ -50,8 +81,7 @@ void quicksort(int arr[],int s,int e){
         return ;
     }
 
-    
-    int p = partition(arr,s,e);
+    int p = partitionDsaBook(arr,s,e);
 
     // left part with recurtion:
     quicksort(arr,s,p-1);
@@ -62,8 +92,8 @@ void quicksort(int arr[],int s,int e){
 
 int main(){
     yasin 
-    int arr[5] = {8,6,9,4,5};
-    int size = 5;
+    int arr[7] = {8,6,9,4,5,-1,-2};
+    int size = 7;
     int s = 0,e = size-1;
 
     quicksort(arr,s,e);

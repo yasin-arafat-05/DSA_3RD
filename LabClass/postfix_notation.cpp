@@ -60,14 +60,14 @@ int precendenceReturn(string str) {
 
 string toPostfix(queue<string> input_list) {
     stack<string> st;
-    string postfix = "";
+    string ans = "";
     input_list.push(")");
     while (!input_list.empty()) {
         string token = input_list.front();
         input_list.pop();
         if (token == "+" || token == "-" || token == "*" || token == "/" || token == "^") {
             if (!st.empty() && precendenceReturn(st.top()) > precendenceReturn(token)) {
-                postfix += st.top();
+                ans += st.top();
                 st.pop();
             }
             st.push(token);
@@ -76,14 +76,14 @@ string toPostfix(queue<string> input_list) {
         } else if (token == ")") {
             while (!st.empty()) {
                 if (st.top() == "(") {st.pop(); break;}
-                postfix += st.top();
+                ans += st.top();
                 st.pop();
             }
         } else {
-            postfix += token;
+            ans += token;
         }
     }
-    return postfix;
+    return ans;
 }
 
 //______________________________ Main Function ______________________________

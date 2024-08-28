@@ -67,5 +67,6 @@ int main(){
     q.push(5);
     q.push(5);
     q.push(5);
-    q.isEmpty();
+    q.pop();
+    q.push(5);
 }
