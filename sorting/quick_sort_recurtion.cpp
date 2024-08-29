@@ -92,8 +92,8 @@ void quicksort(int arr[],int s,int e){
 
 int main(){
     yasin 
-    int arr[7] = {8,6,9,4,5,-1,-2};
-    int size = 7;
+    int arr[5] = {13,15,2,3,5};
+    int size = 5;
     int s = 0,e = size-1;
 
     quicksort(arr,s,e);
