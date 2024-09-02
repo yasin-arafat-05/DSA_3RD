@@ -16,7 +16,7 @@ int precidence(string op){
     return 0;
 }
 
-void postfix(queue<string> input){
+void infix(queue<string> input){
     string ans="";
     stack<string> st;
     st.push("(");
@@ -46,8 +46,8 @@ void postfix(queue<string> input){
 }
 
 int main() {
-    queue<string> input({"A","+","(","B","*","C","-","(","D","/","E","^","F",")","*","G",")","*","H"});
-    postfix(input);
+    queue<string> inputPostFix({"A","+","(","B","*","C","-","(","D","/","E","^","F",")","*","G",")","*","H"});
+    postfix(inputPostFix);
     return 0;
 }
 
