@@ -36,6 +36,7 @@ class Tree{
      // if root is not empty
      cout<<"insert data to the left of: " << data <<endl;
      root->left = insertToTree(root->left);
+     
      cout<<"insert data to the right of: "<< data <<endl;
      root->right = insertToTree(root->right);
 

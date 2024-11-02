@@ -22,6 +22,7 @@ class LinkedList{
     public:
     Node *head;
     Node *tail;
+
     LinkedList(){
         head = NULL;
         tail = NULL;
@@ -41,7 +42,6 @@ class LinkedList{
 
     newNode->next = head;
     head = newNode;
-
   }
 
   // ------------------ insert at tail -------------------
@@ -78,6 +78,7 @@ class LinkedList{
             insertAtTail(data);
             return;
         }
+
         Node *save = temp->next;
         temp->next = newNode;
         newNode->next = save;
@@ -91,6 +92,7 @@ class LinkedList{
             cout<<"No element in the linked list."<<endl;
             return;
         }
+
         head = head->next;
     }
 
@@ -130,6 +132,7 @@ class LinkedList{
             deleteFromTail();
             return;
         }
+        
         Node *save = temp->next->next;
         temp->next->next = NULL;
         temp->next = save;

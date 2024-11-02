@@ -183,7 +183,7 @@ Node *deleteFromBst(Node *root,int val){
 
     }else if(root->data > val){
         root->left = deleteFromBst(root->left,val);
-    }else if(root->right < val){
+    }else if(root->data < val){
         root->right = deleteFromBst(root->right,val);
     }
 

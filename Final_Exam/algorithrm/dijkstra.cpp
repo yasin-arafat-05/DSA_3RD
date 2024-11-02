@@ -49,7 +49,6 @@ int main() {
 
             // Relaxation step
             if (nodeDistance + edgeWeight < dist[adjNode]) {
-
                 // If there's a shorter path to adjNode, update the distance
                 // Remove old pair if it exists
                 if (dist[adjNode] != inf) {
@@ -57,13 +56,12 @@ int main() {
                 }
                 // update distance:
                 dist[adjNode] = nodeDistance + edgeWeight;
-
                 // add new pair
                 st.insert({dist[adjNode], adjNode});
             }
         }
     }
-
+    
     // Output the shortest distances from source to each node
     cout << "Shortest distances from source " << source << ":" << endl;
     for (int i = 0; i < nodes; i++) {
