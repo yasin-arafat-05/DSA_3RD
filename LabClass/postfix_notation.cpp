@@ -34,28 +34,15 @@ string solvePostfix_1(queue<string> input_list) {
 
 //_____________________________ Infix to Postfix _____________________________
 
-int precendenceReturn(string str) {
-    switch (str.at(0))
-    {
-    case '+':
-        return 1;
-        break;
-    case '-':
-        return 1;
-        break;
-    case '*':
-        return 2;
-        break;
-    case '/':
-        return 2;
-        break;
-    case '^':
-        return 3;
-        break;
-    default:
-        return 0;
-        break;
-    }
+int precidence(string op){
+        if(op=="+" || op=="-"){
+            return 1;
+        }else if(op=="*" || op=="/"){
+            return 2;
+        }else if(op=="^"){
+            return 3;
+        }
+    return 0;
 }
 
 string toPostfix(queue<string> input_list) {
@@ -66,7 +53,7 @@ string toPostfix(queue<string> input_list) {
         string token = input_list.front();
         input_list.pop();
         if (token == "+" || token == "-" || token == "*" || token == "/" || token == "^") {
-            if (!st.empty() && precendenceReturn(st.top()) > precendenceReturn(token)) {
+            if (!st.empty() && precidence(st.top()) > precidence(token)) {
                 ans += st.top();
                 st.pop();
             }

@@ -1,77 +1,31 @@
 
-
 #include<iostream>
-#include<vector>
-#include<set>
-
 using namespace std;
-const int inf = 1e7;
-
-int main(){
-
-    int n,e;cout<<"Enter the value of Edge: "<<endl;
-    cin>>n>>e;
-
-    vector<vector<pair<int,int>>> graph(n+1);
-    vector<int> dist(n+1,inf);
-
-    cout<<"Enter the value in the format of [u,v,w]: "<<endl;
-    for(int i=0;i<e;i++){
-        int u,v,w;cin>>u>>v>>w;
-        graph[u].push_back({v,w});
-        graph[v].push_back({u,w});
-    }
-
-    cout<<"Enter the source Node: "<<endl;
-    int source;
-    cin>>source;
-    dist[source] = 0;
 
 
-    set<pair<int,int>> st;
-
-    st.insert({0,source}); // dist,node
-
-    while (!st.empty()){
-        auto top = *(st.begin());
-        int dis = top.first;
-        int nodeValue = top.second;
-        st.erase(st.begin());
-
-        for(auto neighbor :  graph[nodeValue]){
-            int adjNode = neighbor.first;
-            int adjWeith = neighbor.second;
-            if((dis+adjWeith) < dist[adjNode]){
-                // remove the old pair
-                if(dist[adjNode] != inf){
-                    st.erase({dist[adjNode],adjNode});
-                }
-                dist[adjNode] = dis+adjWeith;
-                st.insert({dist[adjNode],adjNode});
-            }
-
-        }
-    }
 
 
-    cout<<"shortest distance from source: "<<source<<endl: 
-    for(int i=0;i<n;i++){
-        cout<<dist[i]<<" ";
-    }
-}
 
-/*
+//______________________________ Main Function ______________________________
 
-4 5
+int main() {
 
-0 1 5
-0 2 8
-1 2 9
-1 3 2
-3 2 6
+    // // postfix to infix:
+    // queue<string> input_list({"5","6","2","+","*","12","4","/","-"});
+    // cout << solvePostfix_1(input_list) << "\n";
 
-0
+    // // infix to postfix:
+    // queue<string> input({"A","+","(","B","*","C","-","(","D","/","E","^","F",")","*","G",")","*","H"});
+    // cout << toPostfix(input) << "\n";
+    
 
-0 5 7 
+    // quick sort:
+    int arr[5] = {13,15,2,3,5};
+    int size = 5;
+    int s = 0,e = size-1;
 
-*/
+    //tower of hanoi:
+    // Hanoi(4,"A","B","C");
+} 
+
+
