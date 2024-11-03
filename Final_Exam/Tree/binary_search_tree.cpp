@@ -220,6 +220,12 @@ int main() {
      cout << "\nInOrder Traversal: ";
     bst.inOrderTraversal(bst.root);
 
+    bst.insertNewNode(bst.root,150);
+    cout<<endl<<endl;
+    bst.insertNewNode(bst.root,10);
+     cout << "\nInOrder Traversal: ";
+    bst.inOrderTraversal(bst.root);
+
     return 0;
 }
 

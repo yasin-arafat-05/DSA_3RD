@@ -1,76 +1,77 @@
 
 
 #include<iostream>
-#include<limits.h>
 #include<vector>
-const int inf = 1e5;
+#include<set>
+
 using namespace std;
-
-
+const int inf = 1e7;
 
 int main(){
 
-int e,n;
-cout<<"Enter the value of node and edge"<<endl;
-cin>>n>>e;
-vector<vector<pair<int,int>>> graph(n+1);
-cout<<"Enter the value of [u,v,w]: "<<endl;
-for(int i=0;i<e;i++){
-    int u,v,w;cin>>u>>v>>w;
-    graph[u].push_back({v,w});
-    graph[v].push_back({u,w});
-}
+    int n,e;cout<<"Enter the value of Edge: "<<endl;
+    cin>>n>>e;
 
-// prim's
+    vector<vector<pair<int,int>>> graph(n+1);
+    vector<int> dist(n+1,inf);
 
-vector<int> par(n,-1);
-vector<int> key(n,inf);
-vector<bool> mst(n,false);
-
-// take the input of source:
-int source;
-cout<<endl<<" give source: "<<endl;
-cin>>source;
-
-key[1] = source;
-
-for(int i=1;i<=n;i++){
-    
-    // find min:
-    int min = INT_MAX;
-    int u;
-    for(int v=1;v<=n;v++){
-        if(par[i] && key[v]<min){
-            min = key[v];
-            u = v;
-        }
+    cout<<"Enter the value in the format of [u,v,w]: "<<endl;
+    for(int i=0;i<e;i++){
+        int u,v,w;cin>>u>>v>>w;
+        graph[u].push_back({v,w});
+        graph[v].push_back({u,w});
     }
 
-    // true 
-    mst[u]  = true;
+    cout<<"Enter the source Node: "<<endl;
+    int source;
+    cin>>source;
+    dist[source] = 0;
 
-    //adjency
-    for(auto neighbour : graph[u]){
-        int first = neighbour.first; // node
-        int secon = neighbour.second; // weight
 
-        if(!par[i] && secon<key[first]){
-            key[first] = secon;
-            par[first] = u;
+    set<pair<int,int>> st;
+
+    st.insert({0,source}); // dist,node
+
+    while (!st.empty()){
+        auto top = *(st.begin());
+        int dis = top.first;
+        int nodeValue = top.second;
+        st.erase(st.begin());
+
+        for(auto neighbor :  graph[nodeValue]){
+            int adjNode = neighbor.first;
+            int adjWeith = neighbor.second;
+            if((dis+adjWeith) < dist[adjNode]){
+                // remove the old pair
+                if(dist[adjNode] != inf){
+                    st.erase({dist[adjNode],adjNode});
+                }
+                dist[adjNode] = dis+adjWeith;
+                st.insert({dist[adjNode],adjNode});
+            }
+
         }
     }
 
 
+    cout<<"shortest distance from source: "<<source<<endl: 
+    for(int i=0;i<n;i++){
+        cout<<dist[i]<<" ";
     }
-
-
-    // output: 
-    int totalWeight = 0;
-    for (int i = 2; i <= n; i++) { 
-        cout<< key[i]<<" ";
-        totalWeight += key[i];
-    }
-    cout << endl <<"Total weight of the MST: " << totalWeight << endl;
-
 }
 
+/*
+
+4 5
+
+0 1 5
+0 2 8
+1 2 9
+1 3 2
+3 2 6
+
+0
+
+0 5 7 
+
+*/

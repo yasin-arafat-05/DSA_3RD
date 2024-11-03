@@ -7,19 +7,9 @@ class Node {
     int data;
     Node* next;
 
-    //constrcutor
     Node(int d) {
         this->data = d;
         this->next = NULL;
-    }
-
-    ~Node() {
-        int value = this->data;
-        if(this->next != NULL) {
-            delete next;
-            next = NULL;
-        }
-        cout << " memory is free for node with data " << value << endl;
     }
 
 };
@@ -108,24 +98,7 @@ void deleteNode(Node* &tail, int value) {
 
 }
 
-bool isCircularList(Node* head) {
-    //empty list
-    if(head == NULL) {
-        return true;
-    }
 
-    Node* temp = head -> next;
-    while(temp != NULL && temp != head ) {
-        temp = temp -> next;
-    }
-
-    if(temp == head ) {
-        return true;
-    }
-
-    return false;
-
-}
 
 
 
