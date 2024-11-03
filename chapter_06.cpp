@@ -58,14 +58,14 @@ void quickSort(int arr[],int s,int e){
 
 //--------------------Tower of Hanoi ------------------
 
-void Hanoi(int n,string B,string A,string E){
+void Hanoi(int n,string BEG,string AUX,string END){
     if(n==1){
-        cout<<B<<" -> "<<E<<endl;
+        cout<<BEG<<" -> "<<END<<endl;
         return ;
     }
-    Hanoi(n-1,B,E,A);
-    cout<<B<<" -> "<<E<<endl;
-    Hanoi(n-1,A,B,E);
+    Hanoi(n-1,BEG,END,AUX);
+    cout<<BEG<<" -> "<<END<<endl;
+    Hanoi(n-1,AUX,BEG,END);
 }
 
 //----------------------- infix to postfix: ---------------
